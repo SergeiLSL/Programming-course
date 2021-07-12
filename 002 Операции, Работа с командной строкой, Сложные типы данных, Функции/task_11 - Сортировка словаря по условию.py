@@ -18,6 +18,5 @@ personnel.sort(key=myFunc)
 
 print(personnel)  # вывод в строку
 print()
-
 for person in personnel:  # вывод в столбец
     print(person)
