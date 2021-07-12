@@ -1,5 +1,6 @@
 """
 Материалы:
+
 tuple vs list: http://stackoverflow.com/questions/1708510/python-list-vs-tuple-when-to-use-each http://stackoverflow.com/questions/626759/whats-the-difference-between-lists-and-tuples http://nedbatchelder.com/blog/201608/lists_vs_tuples.html
 
 dict: https://pythonworld.ru/tipy-dannyx-v-python/slovari-dict-funkcii-i-metody-slovarej.html
