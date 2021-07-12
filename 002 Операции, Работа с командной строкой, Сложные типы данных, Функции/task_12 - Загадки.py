@@ -16,12 +16,13 @@
 и "python" оба должны быть правильным ответом на вопрос
 "Какой язык мы учим?"
 """
+import random
 
-puzzles = {'Загадка 1': 'Ответ1',
-           'Загадка 2': 'Ответ2',
-           'Загадка 3': 'Ответ3',
-           'Загадка 4': 'Ответ4',
-           'Загадка 5': 'Ответ5'
+puzzles = {'Загадка 1': 'ответ1',
+           'Загадка 2': 'ответ2',
+           'Загадка 3': 'ответ3',
+           'Загадка 4': 'ответ4',
+           'Загадка 5': 'ответ5'
            }
 
 
@@ -34,25 +35,26 @@ def new_puzzles():
         print('Такая загадка уже есть.')
 
 
+yes = []
+no = []
+
+
 def my_test():
-    print('Выберите вопрос от 1 до {}: '.format(len(puzzles)))
-    n = int(input()) - 1
-    if 0 <= n < len(puzzles):
-        print(puzzles[n][0])
-        print('Ваш ответ: ')
-        answer = input()
-        if str.lower(answer) == puzzles[n][1]:
-            yes.append(1)
-            print('Правильно!')
-        elif str.lower(answer) != puzzles[n][1]:
-            no.append(1)
-            print('Неправильно!')
-    else:
-        print(f'Введите число от 1 до {len(puzzles)}')
+    s_key = [*puzzles]
+    r = random.choice(s_key)
+    print(f'Отгадайте загадку: {r}')
+    print('Ваш ответ: ')
+    answer = input()
+    if str.lower(answer) == puzzles[r]:
+        yes.append(1)
+        print('Правильно!')
+    elif str.lower(answer) != puzzles[r]:
+        no.append(1)
+        print('Неправильно!')
 
 
 while True:
-    flag = input('Следующий вопрос? [y/n]: ')
+    flag = input('Вопрос задать? [y/n]: ')
     if flag == 'y':
         my_test()
     elif flag == 'n':
@@ -63,3 +65,4 @@ while True:
             print(f'Всего ответов {len(yes) + len(no)}, правильных {len(yes)}')
             print('Good bay')
             break
+
