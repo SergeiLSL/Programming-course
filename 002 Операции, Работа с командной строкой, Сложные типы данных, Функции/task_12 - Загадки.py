@@ -24,3 +24,4 @@ puzzles = [['Загадка 1', str.lower('Ответ1')],
            ['Загадка 5', str.lower('Ответ5')]
            ]
 print()
+print()
