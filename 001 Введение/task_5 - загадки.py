@@ -24,6 +24,9 @@ puzzles = [['Загадка 1', str.lower('Ответ1')],
            ['Загадка 5', str.lower('Ответ5')]
            ]
 
+yes = []
+no = []
+
 
 def new_puzzles():
     r = input('Введите Загадку: ')
@@ -32,10 +35,6 @@ def new_puzzles():
         puzzles.append([r, str.lower(a)])
     else:
         print('Такая загадка уже есть.')
-
-
-yes = []
-no = []
 
 
 def my_test():
