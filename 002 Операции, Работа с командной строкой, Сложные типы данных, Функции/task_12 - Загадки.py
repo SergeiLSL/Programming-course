@@ -17,11 +17,49 @@
 "Какой язык мы учим?"
 """
 
-puzzles = [['Загадка 1', str.lower('Ответ1')],
-           ['Загадка 2', str.lower('Ответ2')],
-           ['Загадка 3', str.lower('Ответ3')],
-           ['Загадка 4', str.lower('Ответ4')],
-           ['Загадка 5', str.lower('Ответ5')]
-           ]
-print()
-print()
+puzzles = {'Загадка 1': 'Ответ1',
+           'Загадка 2': 'Ответ2',
+           'Загадка 3': 'Ответ3',
+           'Загадка 4': 'Ответ4',
+           'Загадка 5': 'Ответ5'
+           }
+
+
+def new_puzzles():
+    r = input('Введите Загадку: ')
+    a = input('Введите Ответ: ')
+    if r not in puzzles:
+        puzzles.setdefault(r, str.lower(a))
+    else:
+        print('Такая загадка уже есть.')
+
+
+def my_test():
+    print('Выберите вопрос от 1 до {}: '.format(len(puzzles)))
+    n = int(input()) - 1
+    if 0 <= n < len(puzzles):
+        print(puzzles[n][0])
+        print('Ваш ответ: ')
+        answer = input()
+        if str.lower(answer) == puzzles[n][1]:
+            yes.append(1)
+            print('Правильно!')
+        elif str.lower(answer) != puzzles[n][1]:
+            no.append(1)
+            print('Неправильно!')
+    else:
+        print(f'Введите число от 1 до {len(puzzles)}')
+
+
+while True:
+    flag = input('Следующий вопрос? [y/n]: ')
+    if flag == 'y':
+        my_test()
+    elif flag == 'n':
+        flag = input('Вы можете предложить свою задачу? [y/n]: ')
+        if flag == 'y':
+            new_puzzles()
+        else:
+            print(f'Всего ответов {len(yes) + len(no)}, правильных {len(yes)}')
+            print('Good bay')
+            break
