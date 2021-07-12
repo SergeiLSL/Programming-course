@@ -7,5 +7,5 @@
 s = ['Earth', 'Russia', 'Moscow']
 
 print(' -> '.join(s))
-
+print()
 print(f'{s[0]} -> {s[1]} -> {s[2]}')
