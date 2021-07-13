@@ -14,6 +14,6 @@ def result(s):
 
 
 s = list(map(int, input().split()))
-print(result(s))
+print(*result(s))
 
 
