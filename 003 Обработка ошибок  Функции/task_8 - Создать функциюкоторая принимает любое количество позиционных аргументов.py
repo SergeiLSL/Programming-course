@@ -6,7 +6,7 @@
  попали все строки, длинее 3 символов.
  Для соединения между любых двух строк вставлять glue
 
- abc cde fekl mnjp ldfg
+ abc cde fekl mnjp ldfg abwec cde feeekl mnjp ldoppfg
 """
 
 
@@ -20,7 +20,7 @@ def stroka(s, glue=':'):
 
 
 origin = list(map(str, input().split()))
-
-print(stroka(origin))
+glue = ':'
+print(stroka(origin, glue))
 
 
