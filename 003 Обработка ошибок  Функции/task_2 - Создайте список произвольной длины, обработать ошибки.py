@@ -8,10 +8,10 @@
 
 s = ['add', 'gjgr', 'uykt', 'wtyye']
 try:
-    n = int(input('Enter index:'))
+    n = int(input('Enter index: '))
     if n >= 0:
         if n >= len(s):
-            raise IndexError()
+            raise IndexError
     print(s[n])
 except IndexError:
     print('Индекс выходит за пределы списка.')
