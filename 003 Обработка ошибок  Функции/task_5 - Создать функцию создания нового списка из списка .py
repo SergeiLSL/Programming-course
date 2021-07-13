@@ -8,14 +8,13 @@
 """
 
 
-def result(s, f):
+def result(s, f = True):
     if f == False:
         print(1)
     else:
         print(s)
 
 
-
 s = list(map(int, input().split()))
-f = input()
-
+f = False
+print(result(s, f))
