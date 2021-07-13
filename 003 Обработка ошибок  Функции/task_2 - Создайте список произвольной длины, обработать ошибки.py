@@ -13,6 +13,7 @@ try:
         if n >= len(s):
             raise IndexError
     print(s[n])
+
 except IndexError:
     print('Индекс выходит за пределы списка.')
 except ValueError:
