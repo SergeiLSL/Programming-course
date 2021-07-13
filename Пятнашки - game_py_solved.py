@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-
+"""
+https://gist.github.com/agavrish/edde1a0c4d219035b3a4f26d4e4c3583
+"""
 # `random` module is used to shuffle field, see§:
 # https://docs.python.org/3/library/random.html#random.shuffle
 import random
