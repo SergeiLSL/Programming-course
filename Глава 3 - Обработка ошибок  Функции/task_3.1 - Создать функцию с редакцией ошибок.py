@@ -1,31 +1,26 @@
 """
+task_3.1 - Обработка исключений
+
 Пользователь вводит число, если оно четное -
 выбрасываем исключение ValueError, если оно
 меньше 0 - TypeError, если оно больше 10 - IndexError.
 Обрабатываем ошибку, говорим пользователю, в чем его ошибка.
 """
 
-
-def result(i):
-    if i % 2 == 0:
-        raise ValueError
-    elif i < 0:
+n = int(input())
+try:
+    if n < 0:
         raise TypeError
-    elif i > 10:
+    elif n > 10:
         raise IndexError
+    elif n % 2 == 0:
+        raise ValueError
     else:
-        return 'Правильное число.'
+        print('Правильно')
 
-
-for i in [-1, 2, 11]:
-    try:
-        result(i)
-    except ValueError as e:
-        print('Возникла ошибка значения')
-    except TypeError as e:
-        print('Возникла ошибка типа', e)
-    except IndexError as e:
-        print('Возникла ошибка индекса', e)
-
-a = int(input())
-print(result(a))
+except TypeError:
+    print('Число должно быть больше нуля')
+except IndexError:
+    print('Число должно быть меньше десяти')
+except ValueError:
+    print('Число должно быть меньше нечетным')
