@@ -1,4 +1,5 @@
 # chenikita
+
 # https://github.com/chenikita/4course_Homework
 
 # 1. Создать лист из 6 любых чисел. Отсортировать его по возрастанию
