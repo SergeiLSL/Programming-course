@@ -16,10 +16,6 @@ def result(i):
     else:
         return 'Правильное число.'
 
-# try:
-#
-# except
-
 
 for i in [-1, 2, 11]:
     try:
