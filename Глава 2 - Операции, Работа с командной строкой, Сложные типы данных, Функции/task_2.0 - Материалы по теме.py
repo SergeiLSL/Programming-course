@@ -24,4 +24,5 @@ dict: https://pythonworld.ru/tipy-dannyx-v-python/slovari-dict-funkcii-i-metody-
 
 Видео:
 Как устроен современный dict? https://www.youtube.com/watch?v=p33CVV29OG8
+
 """
