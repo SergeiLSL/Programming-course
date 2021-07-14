@@ -28,10 +28,10 @@ print(a.split(':'))
 # а какие - нет
 
 for i in range(1, 100):
-	if i % 7 == 0:
-		print('and {} is!'.format(i))
-	else:
-		print('{} is not multiple of 7'.format(i))
+    if i % 7 == 0:
+        print('and {} is!'.format(i))
+    else:
+        print('{} is not multiple of 7'.format(i))
 
 # 7. Создать матрицу любых чисел 3 на 4, сначала вывести все строки, потом все столбцы
 matrix = [
@@ -52,24 +52,24 @@ for col in matrix:
     pass
 print('1st collumn:', a)
 print('2nd collumn:', b)
-print('3rd collumn:', c)		
+print('3rd collumn:', c)
 
 # 8. Создать список любых объектов, в цикле напечатать в консоль: объект и его индекс
-any_obj = [1, '1231', [1,2,3,], 3.345, str]
+any_obj = [1, '1231', [1, 2, 3, ], 3.345, str]
 for i in any_obj:
-	print(i, any_obj.index(i))
+    print(i, any_obj.index(i))
 
 # 9. Создать список с тремя значениями 'to-delete' и нескольми любыми другими, удалить из него 
 # все значения 'to-delete'
 
-to_del  = ['to-delete', 123, str, float, 'to-delete', 'smth', [1,2,3,4,5], 'to-delete']
+to_del = ['to-delete', 123, str, float, 'to-delete', 'smth', [1, 2, 3, 4, 5], 'to-delete']
 
 for i in to_del:
-	if i == 'to-delete':
-		to_del.remove(i)
+    if i == 'to-delete':
+        to_del.remove(i)
 print(to_del)
 
 # 10. Пройти по всем числам от 1 до 10 в обратную сторону (то есть: от 10 до 1), 
 # напечатать их в консоль
 for i in range(10, 0, -1):
-	print(i)
+    print(i)
