@@ -10,16 +10,17 @@
 
 
 def result(s, f=True):
-    n_s = list()
+    n_s = []
     for i in range(len(s)):
-        if f and s[i] % 2 != 0:
-            print(s[i])
-            n_s.append(s[i])
+        if f:
+            if s[i] % 2 != 0:
+                n_s.append(s[i])
         else:
-            n_s.append(s[i])
-    return n_s, type(n_s)
+            if s[i] % 2 == 0:
+                n_s.append(s[i])
+    return n_s
 
 
 s = list(map(int, input().split()))
 f = False
-print(result(s))
+print(*result(s))
