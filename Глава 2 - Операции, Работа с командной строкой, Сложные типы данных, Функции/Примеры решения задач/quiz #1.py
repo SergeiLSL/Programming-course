@@ -1,6 +1,7 @@
 # MikhailPast
 # https://gist.github.com/MikhailPast/e28ea651f8ef14a96ebb9611824a2cbc
 #quiz1
+
 x = int(input("what is ths sum of 4*2? "))
 if x != 8:
     print("Try again!")
