@@ -7,7 +7,6 @@
  Для соединения между любых двух строк вставлять glue
 
  abc cde fekl mnjp ldfg abwec cde feeekl mnjp ldoppfg
-
 """
 
 
