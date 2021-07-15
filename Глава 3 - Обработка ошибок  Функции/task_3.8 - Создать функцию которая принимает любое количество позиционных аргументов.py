@@ -13,9 +13,9 @@
 def stroka(s, glue=':'):
     n_s = (list(s))
     new_s = ''
-    for i in range(len(n_s)):
-        if len(n_s[i]) > 3:
-            new_s += n_s[i] + ' '
+    for s in n_s:
+        if len(s) > 3:
+            new_s += s + ' '
     return glue.join(new_s.split())
 
 
@@ -23,4 +23,17 @@ origin = list(map(str, input().split()))
 glue = ':'
 print(stroka(origin, glue))
 
+"""
+Как вариант
+"""
 
+
+def fun(*strings, glue=':'):
+    list = []
+    for string in strings:
+        if len(string) > 3:
+            list.append(string)
+    return glue.join(list)
+
+
+print(fun('hello', 'www', 're', 'good', 'heljlo', 'wkww', 'rek'))
