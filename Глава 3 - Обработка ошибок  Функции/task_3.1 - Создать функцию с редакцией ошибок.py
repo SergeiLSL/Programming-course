@@ -8,6 +8,31 @@ task_3.1 - Обработка исключений
 
 """
 
+
+def result(x):
+    try:
+        if n < 0:
+            raise TypeError
+        elif n > 10:
+            raise IndexError
+        elif n % 2 == 0:
+            raise ValueError
+        else:
+            return 'Правильно'
+
+    except TypeError:
+        return 'Число должно быть больше нуля'
+    except IndexError:
+        return 'Число должно быть меньше десяти'
+    except ValueError:
+        return 'Число должно быть меньше нечетным'
+
+
+n = int(input())
+print(result(n))
+
+# ---------------------------------------------------
+
 n = int(input())
 try:
     if n < 0:
@@ -25,3 +50,6 @@ except IndexError:
     print('Число должно быть меньше десяти')
 except ValueError:
     print('Число должно быть меньше нечетным')
+
+n = int(input())
+result(n)

@@ -5,17 +5,21 @@
 с нечетными числами из входного списка, если флаг
 отрицателен - возвращаем новый список с четными
 числами из входного списка
-
+12 24 13 18 2 7 9 4
 """
 
 
-def result(s, f = True):
-    if f == False:
-        print(1)
-    else:
-        print(s)
+def result(s, f=True):
+    n_s = list()
+    for i in range(len(s)):
+        if f and s[i] % 2 != 0:
+            print(s[i])
+            n_s.append(s[i])
+        else:
+            n_s.append(s[i])
+    return n_s, type(n_s)
 
 
 s = list(map(int, input().split()))
 f = False
-print(result(s, f))
+print(result(s))
