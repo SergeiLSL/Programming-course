@@ -1,3 +1,4 @@
+
 def P3():
     q, e = 0, 0
     import random
