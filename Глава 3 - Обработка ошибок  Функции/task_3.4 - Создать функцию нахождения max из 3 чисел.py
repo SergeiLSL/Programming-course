@@ -13,3 +13,21 @@ def result(s):
 
 s = list(map(int, input().split()))
 result(s)
+
+
+"""
+Как вариант
+"""
+
+
+def function(x, y, z):
+    lst = [x, y, z]
+    lst.sort()
+    print(lst[1], lst[2])
+
+
+a = int(input())
+b = int(input())
+c = int(input())
+
+function(a, b, c)
