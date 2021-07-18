@@ -15,8 +15,6 @@ words = ['Мама', 'окно', 'Магазин', 'стол', 'машина', '
 
 word = random.choice(words).lower()
 print(word)
-my_life = len(word)
-print(f'У вас {name} есть {my_life} попытки')
 
 task_word = []
 for b in word:
@@ -24,26 +22,26 @@ for b in word:
 
 print(*task_word)
 
-while True:
+my_life = len(word)
+print(f'У вас {name} есть {my_life} попытки')
+
+while my_life != 0:
     user_letter = input(f'{name} введите букву: ')
+    my_life -= 1
     if user_letter in word:
         print(user_letter)
         for i in range(len(task_word)):
+            s = len(task_word)
             a = -1
-            while True:
+            while s != 0:
                 a = word.find(user_letter, a+1)
                 if a == -1:
                     break
                 elif i == a:
                     task_word[i] = user_letter
                 elif i != a:
-                    my_life -= 1
                     continue
+                s -= 1
 
-        print(', '.join(task_word))
+    print(', '.join(task_word))
 
-    # elif user_num < num:
-    #     print('Слишком мало, попробуйте еще раз')
-    # else:
-    #     print('Вы угадали, поздравляем!')
-    #     break
