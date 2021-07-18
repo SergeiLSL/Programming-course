@@ -22,21 +22,27 @@ for b in word:
 
 print(*task_word)
 
-my_life = len(word)
-print(f'У вас {name} есть {my_life} попытки')
+n = len(word)
+if (10 < n < 20) or (n % 10 in [0, 5, 6, 7, 8, 9]):
+    print(f'У вас есть {n} попыток.')
+elif n % 10 == 1:
+    print(f'У вас есть {n} попытка.')
+else:
+    print(f'У вас есть {n} попытки.')
+
 count = 0
 while True:
     if count == len(word):
         print('Вы спасли себе жизнь!')
         break
-    elif my_life == 0:
+    elif n == 0:
         print('Вас повесят!')
         break
     elif ''.join(task_word).isalpha():
         print('Вы спасли себе жизнь!')
         break
     user_letter = input(f'{name} введите букву: ')
-    my_life -= 1
+    n -= 1
     if user_letter in word:
         print(user_letter)
         for i in range(len(task_word)):
@@ -54,6 +60,6 @@ while True:
                 s -= 1
 
     print(''.join(task_word))
-    print(f'У вас осталось {my_life} попыток')
+    print(f'У вас осталось {n} попыток')
 
-# print('К сожалению у вас закончились жизни')
+
