@@ -8,14 +8,36 @@
 """
 import random
 
+print("Игра - 'Виселица'")
+name = input('Пожалуйста введите ваше имя: ')
+
 words = ['Мама', 'окно', 'Магазин', 'стол', 'машина', 'шкаф', 'ручка', 'Молоко']
 
 word = random.choice(words).lower()
 print(word)
+my_life = len(word)
+print(f'У вас {name} есть {my_life} попытки')
 
-task_word = ''
+task_word = []
 for b in word:
-    task_word += '_'
+    task_word += ['_']
 
-print(task_word)
+print(*task_word)
 
+while True:
+    user_letter = input(f'{name} введите букву: ')
+    if user_letter in word:
+        print(user_letter)
+        a = int(word.find(user_letter))
+        print(a, type(a))
+        for i in range(len(task_word)):
+            if i == a:
+                task_word[i] = user_letter
+
+        print(', '.join(task_word))
+
+    # elif user_num < num:
+    #     print('Слишком мало, попробуйте еще раз')
+    # else:
+    #     print('Вы угадали, поздравляем!')
+    #     break
