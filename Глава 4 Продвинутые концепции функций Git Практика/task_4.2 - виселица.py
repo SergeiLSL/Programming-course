@@ -44,4 +44,6 @@ while my_life != 0:
                 s -= 1
 
     print(', '.join(task_word))
+    print(f'У вас осталось {my_life} попыток')
 
+# print('К сожалению у вас закончились жизни')
