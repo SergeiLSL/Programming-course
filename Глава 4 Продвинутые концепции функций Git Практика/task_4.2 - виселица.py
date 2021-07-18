@@ -24,8 +24,17 @@ print(*task_word)
 
 my_life = len(word)
 print(f'У вас {name} есть {my_life} попытки')
-
-while my_life != 0:
+count = 0
+while True:
+    if count == len(word):
+        print('Вы спасли себе жизнь!')
+        break
+    elif my_life == 0:
+        print('Вас повесят!')
+        break
+    elif ''.join(task_word).isalpha():
+        print('Вы спасли себе жизнь!')
+        break
     user_letter = input(f'{name} введите букву: ')
     my_life -= 1
     if user_letter in word:
@@ -39,6 +48,7 @@ while my_life != 0:
                     break
                 elif i == a:
                     task_word[i] = user_letter
+                    count += 1
                 elif i != a:
                     continue
                 s -= 1
