@@ -8,8 +8,14 @@
 """
 import random
 
-words = ['мама', 'окно', 'магазин', 'стол', 'машина', 'шкаф', 'ручка', 'молоко']
+words = ['Мама', 'окно', 'Магазин', 'стол', 'машина', 'шкаф', 'ручка', 'Молоко']
 
-word = random.choice(words)
+word = random.choice(words).lower()
 print(word)
+
+task_word = ''
+for b in word:
+    task_word += '_'
+
+print(task_word)
 
