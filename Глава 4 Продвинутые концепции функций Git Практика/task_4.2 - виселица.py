@@ -28,11 +28,17 @@ while True:
     user_letter = input(f'{name} введите букву: ')
     if user_letter in word:
         print(user_letter)
-        a = int(word.find(user_letter))
-        print(a, type(a))
         for i in range(len(task_word)):
-            if i == a:
-                task_word[i] = user_letter
+            a = -1
+            while True:
+                a = word.find(user_letter, a+1)
+                if a == -1:
+                    break
+                elif i == a:
+                    task_word[i] = user_letter
+                elif i != a:
+                    my_life -= 1
+                    continue
 
         print(', '.join(task_word))
 
