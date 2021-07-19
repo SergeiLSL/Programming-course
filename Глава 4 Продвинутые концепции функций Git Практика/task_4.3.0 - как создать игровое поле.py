@@ -70,6 +70,10 @@ import sys
 #             pygame.draw.rect(screen, red, (x, y, width, height))
 #     pygame.display.update()
 
+
+"""
+Научимся реагировать на мышку
+"""
 pygame.init()
 
 size = (510, 510)  # размер игрового поля
