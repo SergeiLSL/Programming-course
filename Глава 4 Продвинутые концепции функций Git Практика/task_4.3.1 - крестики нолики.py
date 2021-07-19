@@ -2,7 +2,6 @@
 Крестики нолики
 https://www.youtube.com/watch?v=GElUzJ7-bcI
 Артем Егоров
-
 """
 import pygame
 import sys
