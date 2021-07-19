@@ -10,6 +10,7 @@ import random
 
 
 def attempt(x):
+    """ Функция вывода окончания слова """
     if (10 < n < 20) or (n % 10 in [0, 5, 6, 7, 8, 9]):
         return f'У вас есть {n} попыток.'
     elif n % 10 == 1:
@@ -19,11 +20,46 @@ def attempt(x):
 
 
 def is_alpha(letter):
+    """ Функция проверки ввода буквы """
     if letter.isalpha():
         return str(letter)
     else:
         print('Введите букву: ')
         return is_alpha(input())
+
+
+def play_gallows():
+    global count, n
+    while True:
+        if count == len(word):
+            print('Вы спасли себе жизнь!')
+            break
+        elif n == 0:
+            print('Увы, Вас повесят!')
+            break
+        elif ''.join(task_word).isalpha():
+            print('Вы спасли себе жизнь!')
+            break
+        user_letter = is_alpha(input())
+        n -= 1
+        if user_letter in word:
+            print(user_letter)
+            for i in range(len(task_word)):
+                s = len(task_word)
+                a = -1
+                while s != 0:
+                    a = word.find(user_letter, a + 1)
+                    if a == -1:
+                        break
+                    elif i == a:
+                        task_word[i] = user_letter
+                        count += 1
+                    elif i != a:
+                        continue
+                    s -= 1
+
+        print(''.join(task_word))
+        print(f'У вас осталось {attempt(n)}')
 
 
 print("*" * 3, " Игра 'Виселица' ", "*" * 3)
@@ -42,41 +78,14 @@ for b in word:
 
 print(*task_word)
 
-n = len(word) + len(word) // 2
+n = len(word)
 print(attempt(n))
-
-print('Введите букву: ')
 count = 0
 
-while True:
-    if count == len(word):
-        print('Вы спасли себе жизнь!')
-        break
-    elif n == 0:
-        print('Увы, Вас повесят!')
-        break
-    elif ''.join(task_word).isalpha():
-        print('Вы спасли себе жизнь!')
-        break
-    user_letter = is_alpha(input())
-    n -= 1
-    if user_letter in word:
-        print(user_letter)
-        for i in range(len(task_word)):
-            s = len(task_word)
-            a = -1
-            while s != 0:
-                a = word.find(user_letter, a+1)
-                if a == -1:
-                    break
-                elif i == a:
-                    task_word[i] = user_letter
-                    count += 1
-                elif i != a:
-                    continue
-                s -= 1
+print('Введите букву: ')
+play_gallows()
 
-    print(''.join(task_word))
-    print(f'У вас осталось {attempt(n)}')
+
+
 
 
