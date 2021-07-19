@@ -49,16 +49,17 @@ while True:
             if mas[row][col] == 'X':
                 color = red
             elif mas[row][col] == 'o':
-                color = white
-            else:
                 color = green
+            else:
+                color = white
             x = col * size_blok + (col + 1) * margin  # координата x
             y = row * size_blok + (row + 1) * margin  # координата y
             pygame.draw.rect(screen, color, (x, y, size_blok, size_blok))
             if color == red:
-                pygame.draw.line(screen, white, (x + 5, y + 5), (x + size_blok - 5, y + size_blok - 5), 4)
-                pygame.draw.line(screen, white, (x + size_blok - 5, y + 5), (x + 5, y + size_blok - 5), 4)
-
+                pygame.draw.line(screen, white, (x + 8, y + 8), (x + size_blok - 8, y + size_blok - 8), 4)
+                pygame.draw.line(screen, white, (x + size_blok - 8, y + 8), (x + 8, y + size_blok - 8), 4)
+            elif color == green:
+                pygame.draw.circle(screen, white, (x + size_blok//2, y + size_blok//2), size_blok//2 - 8, 4)
         pygame.display.update()  # вызываем изменения на экране
 
 
