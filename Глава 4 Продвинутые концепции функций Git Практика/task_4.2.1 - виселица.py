@@ -9,6 +9,15 @@
 import random
 
 
+def attempt(x):
+    if (10 < n < 20) or (n % 10 in [0, 5, 6, 7, 8, 9]):
+        return f'У вас есть {n} попыток.'
+    elif n % 10 == 1:
+        return f'У вас есть {n} попытка.'
+    else:
+        return f'У вас есть {n} попытки.'
+
+
 def is_alpha(letter):
     if letter.isalpha():
         return str(letter)
@@ -34,16 +43,10 @@ for b in word:
 print(*task_word)
 
 n = len(word) + len(word) // 2
-if (10 < n < 20) or (n % 10 in [0, 5, 6, 7, 8, 9]):
-    print(f'У вас есть {n} попыток.')
-elif n % 10 == 1:
-    print(f'У вас есть {n} попытка.')
-else:
-    print(f'У вас есть {n} попытки.')
+print(attempt(n))
 
 print('Введите букву: ')
 count = 0
-
 
 while True:
     if count == len(word):
@@ -74,6 +77,6 @@ while True:
                 s -= 1
 
     print(''.join(task_word))
-    print(f'У вас осталось {n} попыток')
+    print(f'У вас осталось {attempt(n)}')
 
 
