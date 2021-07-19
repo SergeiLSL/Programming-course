@@ -8,6 +8,15 @@
 """
 import random
 
+
+def is_alpha(letter):
+    if letter.isalpha():
+        return str(letter)
+    else:
+        print('Введите букву: ')
+        return is_alpha(input())
+
+
 print("*" * 3, " Игра 'Виселица' ", "*" * 3)
 name = input('Пожалуйста введите ваше имя: ')
 
@@ -24,7 +33,7 @@ for b in word:
 
 print(*task_word)
 
-n = len(word)
+n = len(word) + len(word) // 2
 if (10 < n < 20) or (n % 10 in [0, 5, 6, 7, 8, 9]):
     print(f'У вас есть {n} попыток.')
 elif n % 10 == 1:
@@ -32,18 +41,21 @@ elif n % 10 == 1:
 else:
     print(f'У вас есть {n} попытки.')
 
+print('Введите букву: ')
 count = 0
+
+
 while True:
     if count == len(word):
         print('Вы спасли себе жизнь!')
         break
     elif n == 0:
-        print('Вас повесят!')
+        print('Увы, Вас повесят!')
         break
     elif ''.join(task_word).isalpha():
         print('Вы спасли себе жизнь!')
         break
-    user_letter = input(f'{name} введите букву: ')
+    user_letter = is_alpha(input())
     n -= 1
     if user_letter in word:
         print(user_letter)
