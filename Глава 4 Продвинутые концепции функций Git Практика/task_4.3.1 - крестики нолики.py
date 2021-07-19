@@ -54,9 +54,11 @@ while True:
                 color = green
             x = col * size_blok + (col + 1) * margin  # координата x
             y = row * size_blok + (row + 1) * margin  # координата y
-            pygame.draw.rect(screen, color, (x, y, size_blok, size_blok))  # зная координаты
-            # обращаемся к модулю pygame, draw, выводим на экран белого цвета с координатами
-            # x, y и нижний блок с координатами size_blok, size_blok
+            pygame.draw.rect(screen, color, (x, y, size_blok, size_blok))
+            if color == red:
+                pygame.draw.line(screen, white, (x + 5, y + 5), (x + size_blok - 5, y + size_blok - 5), 4)
+                pygame.draw.line(screen, white, (x + size_blok - 5, y + 5), (x + 5, y + size_blok - 5), 4)
+
         pygame.display.update()  # вызываем изменения на экране
 
 
