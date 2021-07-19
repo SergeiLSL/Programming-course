@@ -70,9 +70,10 @@ def play_gallows():
             print('Правильно. Вы спасли себе жизнь!')
             break
         user_letter = is_alpha(input())  # вводим букву и определяем правильность ввода
+        if user_letter in task_word:
+            print('Вы такую букву уже вводили')
         n -= 1
         if user_letter in word:
-            print(user_letter)
             for i in range(len(task_word)):
                 s = len(task_word)
                 a = -1
