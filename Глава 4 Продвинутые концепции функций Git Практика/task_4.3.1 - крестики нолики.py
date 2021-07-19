@@ -37,13 +37,19 @@ while True:
             print(f'x = {x_mouse} y = {y_mouse}')
             col = x_mouse // (size_blok + margin)  # узнаем номер колонки
             row = y_mouse // (size_blok + margin)  # узнаем номер строки
-            mas[row][col] = 'X'  # побитово умножаем, то есть меняем на противоположенный
+            if query % 2 == 0:
+                mas[row][col] = 'X'
+            else:
+                mas[row][col] = 'o'
+            query += 1
     for row in range(3):  # цикл обхода строк и столбцов
         for col in range(3):  # находим координаты левого верхнего блока
             if mas[row][col] == 'X':
                 color = red
-            else:
+            elif mas[row][col] == 'o':
                 color = white
+            else:
+                color = green
             x = col * size_blok + (col + 1) * margin  # координата x
             y = row * size_blok + (row + 1) * margin  # координата y
             pygame.draw.rect(screen, color, (x, y, size_blok, size_blok))  # зная координаты
