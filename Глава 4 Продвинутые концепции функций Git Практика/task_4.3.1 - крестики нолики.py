@@ -22,18 +22,31 @@ green = (0, 255, 0)
 white = (255, 255, 255)
 mas = [[0]*3 for i in range(3)]  # поготовим массив, заполненный нулями.
 # нули обозначают, что клетка еще пустая
+# для того, чтобы цвета чередовались создадим переменную
+query = 0  # будем постепенно увеличивать на 1 2 3 4 5 6 7.
+# В этом ряду четные и нечетные числа. Значит проверкой на
+# четность можем создать чередование, чтобы понимать какой игрок сейчас ходит
 
 while True:
     for event in pygame.event.get():  # цикл обработки событий
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            x_mouse, y_mouse = pygame.mouse.get_pos()
+            print(f'x = {x_mouse} y = {y_mouse}')
+            col = x_mouse // (size_blok + margin)  # узнаем номер колонки
+            row = y_mouse // (size_blok + margin)  # узнаем номер строки
+            mas[row][col] = 'X'  # побитово умножаем, то есть меняем на противоположенный
     for row in range(3):  # цикл обхода строк и столбцов
         for col in range(3):  # находим координаты левого верхнего блока
+            if mas[row][col] == 'X':
+                color = red
+            else:
+                color = white
             x = col * size_blok + (col + 1) * margin  # координата x
             y = row * size_blok + (row + 1) * margin  # координата y
-            pygame.draw.rect(screen, white, (x, y, size_blok, size_blok))  # зная координаты
+            pygame.draw.rect(screen, color, (x, y, size_blok, size_blok))  # зная координаты
             # обращаемся к модулю pygame, draw, выводим на экран белого цвета с координатами
             # x, y и нижний блок с координатами size_blok, size_blok
         pygame.display.update()  # вызываем изменения на экране
