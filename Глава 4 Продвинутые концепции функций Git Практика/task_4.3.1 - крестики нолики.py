@@ -8,7 +8,7 @@ import sys
 
 pygame.init()  # создаем блок размером 100 на 100
 size_blok = 100  # размер блока 100 пикселей
-margin = 15  # отступ 15 пикселей
+margin = 10  # отступ 10 пикселей
 width = height = size_blok * 3 + margin * 4  # по высоте и ширине по 3 блока и 4 отступа
 
 size_window = (width, height)  # выводим в окно
