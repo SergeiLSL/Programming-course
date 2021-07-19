@@ -115,7 +115,14 @@ pygame.display.set_caption('Game field')  # название игрового п
 width = height = 40  # ширина и высота квадратика
 margin = 10  # для того чтобы межу квадратиками был промежуток
 red = (255, 0, 0)  # цвет квадратика
-
+white = (255, 255, 255)  # цвет квадратика
+# массив будет состоять из нолей, создадим генератор списков
+mas = [[0] * 10 for i in range(10)]
+# развернуто
+# mas = []
+# for i in range(10):
+#     a = [0] * 10
+#     mas.append(a)
 
 while True:
     for event in pygame.event.get():  # цикл обработки событий
@@ -127,9 +134,16 @@ while True:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             x_mouse, y_mouse = pygame.mouse.get_pos()
             print(f'x = {x_mouse} y = {y_mouse}')
-    for col in range(10):  # надо заполнить первую строку
-        for row in range(10):
+            column = x_mouse // (margin + width)  # узнаем номер колонки
+            row = y_mouse // (margin + height)  # узнаем номер строки
+            mas[row][column] = mas[row][column] ^ 1  # побитово умножаем, то есть меняем на противоположенный
+    for row in range(10):  # поменяли местами, как в стандартном обходе
+        for col in range(10):  # добавим проверкуу цвета квадратика
+            if mas[row][col] == 1:
+                color = red
+            else:
+                color = white
             x = col * width + (col + 1) * margin  # меняется только координата x
             y = row * height + (row + 1) * margin  #
-            pygame.draw.rect(screen, red, (x, y, width, height))
+            pygame.draw.rect(screen, color, (x, y, width, height))
     pygame.display.update()
