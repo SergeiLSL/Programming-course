@@ -1,5 +1,6 @@
 """
 Крестики нолики
+
 https://all-python.ru/primery/krestiki-noliki.html
 https://it-black.ru/igra-krestiki-noliki-dlja-dvuh-igrokov-na-python/
 
