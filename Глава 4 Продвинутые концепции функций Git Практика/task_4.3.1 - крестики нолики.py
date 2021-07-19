@@ -37,11 +37,13 @@ while True:
             print(f'x = {x_mouse} y = {y_mouse}')
             col = x_mouse // (size_blok + margin)  # узнаем номер колонки
             row = y_mouse // (size_blok + margin)  # узнаем номер строки
-            if query % 2 == 0:
-                mas[row][col] = 'X'
-            else:
-                mas[row][col] = 'o'
-            query += 1
+            # сделаем проверку на занятость клетки
+            if mas[row][col] == 0:
+                if query % 2 == 0:
+                    mas[row][col] = 'X'
+                else:
+                    mas[row][col] = 'o'
+                query += 1
     for row in range(3):  # цикл обхода строк и столбцов
         for col in range(3):  # находим координаты левого верхнего блока
             if mas[row][col] == 'X':
