@@ -21,14 +21,15 @@ def attempt(x):
 
 def is_alpha(letter):
     """ Функция проверки ввода буквы """
-    if letter.isalpha():
+    if letter.isalpha() and len(letter) == 1:
         return str(letter)
     else:
-        print('Введите букву: ')
+        print('Введите одну букву: ')
         return is_alpha(input())
 
 
 def play_gallows():
+    """ Функция игры """
     global count, n
     while True:
         if count == len(word):
