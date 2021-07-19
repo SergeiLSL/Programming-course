@@ -7,6 +7,7 @@
  И так пока игрок не угадает слово или его не повесят.
 """
 import random
+count = 0
 
 
 def attempt(x):
@@ -38,20 +39,19 @@ def play_again(answer):
 
 def play_start():
     """ Функция начала игры """
-    global count, n, word, task_word
+    global n, word, task_word
     words = ['Животное', 'крокодил', 'птица', 'Пирамида', 'треугольник', 'мячик',
              'Обруч', 'Скакалка', 'Мама', 'окно', 'Магазин', 'стол', 'машина',
              'шкаф', 'ручка', 'Молоко', 'телевизор', 'телефон', 'Париж']
 
     word = random.choice(words).lower()  # выбор случайного слова из списка
-    # print(word)
+    print(word)
     task_word = []
     for b in word:
         task_word += ['_']  # замена букв в слове на нижний пробел
     print(*task_word)
     n = len(word)
     print(attempt(n))  # определяем количество попыток
-    count = 0
     print('Введите букву: ')
     play_gallows()  # вызываем игру
 
@@ -67,7 +67,7 @@ def play_gallows():
             print('Увы, Вас повесят!')
             break
         elif ''.join(task_word).isalpha():
-            print('Вы спасли себе жизнь!')
+            print('Правильно. Вы спасли себе жизнь!')
             break
         user_letter = is_alpha(input())  # вводим букву и определяем правильность ввода
         n -= 1
@@ -88,7 +88,7 @@ def play_gallows():
                     s -= 1
 
         print(''.join(task_word))
-        print(f'У вас осталось {attempt(n)}')
+        print(attempt(n))
 
 
 print("*" * 3, " Игра 'Виселица' ", "*" * 3)
