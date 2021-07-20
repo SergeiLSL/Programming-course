@@ -22,7 +22,6 @@
 Операторы break, continue;
 Работа с модулем random для генерации случайных чисел.
 """
-
 # Простой и конкретный вариант
 
 from random import randint
