@@ -94,13 +94,12 @@ while True:
 
     if game_over:
         screen.fill(black)  # закрашиваем экран черным цветом
-        font = pygame.render.SysFont('comicsansms', 80)  # создаем шрифт
-        text1 = font.render(game_over, True, white)  # будет содержать game_over белым цветом
+        font = pygame.font.SysFont('comicsansms', 80)  # создаем шрифт
+        text1 = font.render(game_over, True, red)  # будет содержать game_over белым цветом
         text_rect = text1.get_rect()  # узнаем его координаты
-        text_x = screen.get_width() / 2 - text_rect.width / 2   # находим центр экрана
-        text_y = screen.get_height() / 2 - text_rect.height() / 2  # находим центр экрана
+        text_x = screen.get_width() / 2 - text_rect.width / 2  # находим центр экрана
+        text_y = screen.get_height() / 2 - text_rect.height / 2  # находим центр экрана
         screen.blit(text1, [text_x, text_y])  # прикрепляем текст по координатам
-
     pygame.display.update()  # вызываем изменения на экране
 
 
