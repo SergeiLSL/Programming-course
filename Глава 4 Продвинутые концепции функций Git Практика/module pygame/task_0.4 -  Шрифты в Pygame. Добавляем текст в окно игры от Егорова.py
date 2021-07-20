@@ -1,7 +1,11 @@
 """
-Шрифты в Pygame. Добавляем текст в окно игры
+Шрифты в Pygame.
 
+Добавляем текст в окно игры
 https://www.youtube.com/watch?v=9s7YpBHJl70
+
+Перемещение текста по экрану
+https://www.youtube.com/watch?v=ZijAA7zjJCo
 """
 import pygame
 pygame.init()
@@ -22,13 +26,14 @@ pygame.display.set_caption('Моя программа')
 black = (0, 0, 0)
 red = (255, 0, 0)
 green = (0, 255, 0)
+blue = (0, 0, 255)
 white = (255, 255, 255)
 
-font = pygame.font.SysFont('microsofttaile', 32)
+font = pygame.font.SysFont('comicsansms', 32)
 # Создаем текст. Аргументы: сам текст, сглаживание текста 1 или 0,
 # цвет текста, фон
-follow = font.render('Привет Сергей', 1, red, green)
-
+follow = font.render(' Привет Сергей! ', 1, red, green)
+like = font.render(' Молодец Сергей! ', 1, green, blue)
 # теперь текст надо разместить на экране
 
 while True:
@@ -36,4 +41,6 @@ while True:
         if event.type == pygame.QUIT:
             quit()
     screen.blit(follow, (0, 0))  # закрепляем на экране по координатам верхнего левого угла прямоугольника
+    screen.blit(like, (0, 300))  # закрепляем на экране по координатам верхнего левого угла прямоугольника
+
     pygame.display.update()  # чтобы надпись отобразилась на экране
