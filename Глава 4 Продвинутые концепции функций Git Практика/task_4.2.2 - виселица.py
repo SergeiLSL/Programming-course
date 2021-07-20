@@ -46,7 +46,7 @@ def play_start():
              'шкаф', 'ручка', 'Молоко', 'телевизор', 'телефон', 'Париж']
 
     word = random.choice(words).lower()  # выбор случайного слова из списка
-    print(word)
+    # print(word)
     task_word = []
     for b in word:
         task_word += ['_']  # замена букв в слове на нижний пробел

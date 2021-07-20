@@ -5,35 +5,28 @@
 """
 
 
-class Printer(object):
+class Animal():
+    animal_type = ''
 
-    def __init__(self):
-        self.values = []
-
-    def log(self, *values):
-        self.values = [v for v in values]
-        print(self.values)
+    def __init__(self, animal_type):
+        self.animal_type = animal_type
 
 
-class FormattedPrinter(Printer):
+class Human():
+    dangerous_animals = ['poisonous', 'predator']
 
-    def formated_log(self, *values):
-        print('***' * len(values))
-        self.log(*values)
-        print('***' * len(values))
+    def is_dangerous(self, animal):
+        return animal.animal_type.lower() in self.dangerous_animals
 
 
-if __name__ == '__main__':
-    print('\n')
-    prt = Printer()
-    prt.log(5, 6, 7, 8, 98, 10)
+MyAnimal = Animal('herbivore')
+MyAnimal1 = Animal('predator')
+MyAnimal2 = Animal('poisonous')
 
-    print('\n')
-    f_prt = FormattedPrinter()
-    f_prt.formated_log(1, 4, 3, 8, 4, 6, 7, 9)
+MyHuman = Human()
 
-    print('\n')
-    f_prt = FormattedPrinter()
-    f_prt.formated_log(1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
+print('Is {} animal dangerous for human? : {}'.format(MyAnimal.animal_type, MyHuman.is_dangerous(MyAnimal)))
+print('Is {} animal dangerous for human? : {}'.format(MyAnimal1.animal_type, MyHuman.is_dangerous(MyAnimal1)))
+print('Is {} animal dangerous for human? : {}'.format(MyAnimal2.animal_type, MyHuman.is_dangerous(MyAnimal2)))
 
 
