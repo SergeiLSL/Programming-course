@@ -20,16 +20,22 @@ class Printer(object):
 class FormattedPrinter(Printer):
 
     def formated_log(self, *values):
-        print('**********************************************')
+        print('***' * len(values))
         self.log(*values)
-        print('**********************************************')
+        print('***' * len(values))
 
 
 if __name__ == '__main__':
     print('\n')
     prt = Printer()
-    prt.log(1, 2, 3, 4, 5, 6, 7, 8, 98, 0)
+    prt.log(5, 6, 7, 8, 98, 10)
 
     print('\n')
     f_prt = FormattedPrinter()
-    f_prt.formated_log(1, 2, 3, 4, 5, 6, 7, 8, 98, 0)
+    f_prt.formated_log(1, 4, 3, 8, 4, 6, 7, 9)
+
+    print('\n')
+    f_prt = FormattedPrinter()
+    f_prt.formated_log(1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
+
+
