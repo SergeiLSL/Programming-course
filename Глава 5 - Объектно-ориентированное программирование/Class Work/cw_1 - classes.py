@@ -7,7 +7,7 @@ class Car:
 
 
 c = Car()
-print(c, type(c))
+print(c, type(c))  # <__main__.Car object at 0x00000181DA758FD0> <class '__main__.Car'>
 
 
 # Classes can have variables called fields
@@ -18,16 +18,16 @@ class Room:
 
 r = Room()
 r1 = Room()
-print(r.number, r1.number)
-print(r.floor, r1.floor)
+print(r.number, r1.number)  # Room 34 Room 34
+print(r.floor, r1.floor)  # 4 4
 
 # You can modify values:
 r.number = 12
 r.floor = '5 floor'
-print(r.number, r1.number)
-print(r.floor, r1.floor)
+print(r.number, r1.number)  # 12 Room 34
+print(r.floor, r1.floor)  # 5 floor 4
 
-
+print()
 # Classes can have functions inside: it's called a method
 
 class Car:
@@ -42,22 +42,27 @@ class Car:
     def stop(self):
         self.speed = self.speed - 3
 
+
 def foo():
     pass
+
+print()
 
 
 class Door:
 
     def open(self):  # note that `self` is the object itself!
-        print('self is', self)
-        print('Door is opened!')
+        print('self is', self)  # self is <__main__.Door object at 0x00000181DA758AF0>
+        print('Door is opened!')  # Door is opened
         self.opened = True   # not so cool style
 
 
 d = Door()
+print(d)
 d.open()
 
 d1 = Door()
+print(d)
 d1.open()
 
 
