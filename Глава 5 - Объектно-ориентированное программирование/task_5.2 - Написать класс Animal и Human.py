@@ -7,38 +7,30 @@
 # predator - хищник
 # poisonous - ядовитый
 
-class Animal(object):
 
-    def __init__(self, name, aggressive):
+class Animal:
+
+    def __init__(self, name, view, animal_type):
         self.name = name
-        self.aggressive = aggressive
+        self.view = view
+        self.animal_type = animal_type
 
-
-    def attack_human(self, human):
-        if self.aggressive and not human.aggressive:
-            print('Атака {} на {} прошла успешно!'.format(self.name, human.name))
-            human.dangerous_animals.append(self)
-        else:
-            print('Атака {} на {} не удалась!'.format(self.name, human.name))
 
 class Human():
 
-    def __init__(self, name, aggressive):
+    def __init__(self, name):
         self.name = name
-        self.dangerous_animals = []
-        self.aggressive = aggressive
 
-    def is_dangerous(self, animal):
-        answers = {True : 'ДА', False : 'НЕТ'}
-        return answers[animal in self.dangerous_animals]
+    # def dangerous_animals(self, animal):
+    #     return animal.view, animal.animal_type.lower()
 
 
-# tiger = Animal('tiger', 'хищник- опасный')
-# cobra = Animal('cobra', 'ядовитая - опасная')
-# giraffe = Animal('giraffe', 'травоядное животное - неопасное')
+tiger = Animal('tiger', 'хищник', 'опасный')
+cobra = Animal('cobra', 'змея', 'ядовитая')
+giraffe = Animal('giraffe', 'травоядное животное', 'неопасное')
 #
-# human = Human('Human')
+human = Human('Human')
 #
-# print(f'Это {tiger.animal_type} для человека')
-# print(f'Это {cobra.animal_type} для человека')
-# print(f'Это {giraffe.animal_type} для человека')
+print(f'{tiger.name} - {tiger.view}, {tiger.animal_type} для человека')
+print(f'{cobra.name} - {cobra.view}, {cobra.animal_type} для человека')
+print(f'{giraffe.name} - {giraffe.view}, {giraffe.animal_type} для человека')
