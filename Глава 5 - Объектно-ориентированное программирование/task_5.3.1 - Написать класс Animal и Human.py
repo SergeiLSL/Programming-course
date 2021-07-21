@@ -24,7 +24,7 @@ class Human():
         if animal.animal_type.lower() in self.animals_dangerous:
             return f'{animal.name} - {animal.view}, {animal.animal_type.lower()}'
         else:
-            return f'{animal.name} - {animal.view}, {animal.animal_type.lower()}'
+            return f'{animal.name} - {animal.view}, неопасное'
 
 
 tiger = Animal('тигр', 'хищник', 'опасное')
