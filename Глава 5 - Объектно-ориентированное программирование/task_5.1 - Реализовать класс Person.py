@@ -45,5 +45,5 @@ if __name__ == '__main__':
     misha.is_known(ivan)  # Misha не знает человека по имени Ivan
     ivan.populat(ivan)
     anna.populat(anna)
-    # print(anna)
+
     # print(misha)
