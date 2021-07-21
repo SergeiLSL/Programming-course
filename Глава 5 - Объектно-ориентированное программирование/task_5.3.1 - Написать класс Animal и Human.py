@@ -17,20 +17,25 @@ class Animal:
 
 
 class Human():
+    animals_dangerous = ['опасное', 'ядовитое']
 
-    def __init__(self, name):
-        self.name = name
+    def dangerous_animals(self, animal):
+        if animal.animal_type.lower() in self.animals_dangerous:
+            return f'{animal.name} - {animal.view}, {animal.animal_type.lower()}'
+        else:
+            return f'{animal.name} - {animal.view}, {animal.animal_type.lower()}'
 
-    # def dangerous_animals(self, animal):
-    #     return animal.view, animal.animal_type.lower()
 
-
-tiger = Animal('tiger', 'хищник', 'опасный')
-cobra = Animal('cobra', 'змея', 'ядовитая')
-giraffe = Animal('giraffe', 'травоядное животное', 'неопасное')
+tiger = Animal('тигр', 'хищник', 'опасное')
+cobra = Animal('кобра', 'змея', 'ядовитое')
+giraffe = Animal('жираф', 'травоядное животное', 'неопасное')
+scorpio = Animal('скорпион', 'паук', 'ядовитое')
+hippopotamus = Animal('бегемот', 'травоядное животное', 'опасное')
 #
-human = Human('Human')
+human = Human()
 #
-print(f'{tiger.name} - {tiger.view}, {tiger.animal_type} для человека')
-print(f'{cobra.name} - {cobra.view}, {cobra.animal_type} для человека')
-print(f'{giraffe.name} - {giraffe.view}, {giraffe.animal_type} для человека')
+print(human.dangerous_animals(tiger))
+print(human.dangerous_animals(cobra))
+print(human.dangerous_animals(giraffe))
+print(human.dangerous_animals(scorpio))
+print(human.dangerous_animals(hippopotamus))
