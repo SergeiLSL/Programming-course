@@ -22,9 +22,9 @@ class Human():
 
     def dangerous_animals(self, animal):
         if animal.animal_type.lower() in self.animals_dangerous:
-            return f'{animal.name} - {animal.view}, {animal.animal_type.lower()}'
+            return f'{animal.name} - {animal.view}, {animal.animal_type.lower()} для человека'
         else:
-            return f'{animal.name} - {animal.view}, неопасное'
+            return f'{animal.name} - {animal.view}, неопасное для человека'
 
 
 tiger = Animal('тигр', 'хищник')
