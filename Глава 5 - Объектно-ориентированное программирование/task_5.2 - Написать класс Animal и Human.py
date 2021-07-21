@@ -7,30 +7,38 @@
 # predator - хищник
 # poisonous - ядовитый
 
-class Animal():
-    animal_type = ''
+class Animal(object):
 
-    def __init__(self, name, animal_type):
+    def __init__(self, name, aggressive):
         self.name = name
-        self.animal_type = animal_type
+        self.aggressive = aggressive
 
+
+    def attack_human(self, human):
+        if self.aggressive and not human.aggressive:
+            print('Атака {} на {} прошла успешно!'.format(self.name, human.name))
+            human.dangerous_animals.append(self)
+        else:
+            print('Атака {} на {} не удалась!'.format(self.name, human.name))
 
 class Human():
-    dangerous_animals = ['poisonous', 'predator']
 
-    def is_dangerous(self, name, animal):
-        if animal.animal_type.lower() in self.dangerous_animals:
-            return self.name
+    def __init__(self, name, aggressive):
+        self.name = name
+        self.dangerous_animals = []
+        self.aggressive = aggressive
+
+    def is_dangerous(self, animal):
+        answers = {True : 'ДА', False : 'НЕТ'}
+        return answers[animal in self.dangerous_animals]
 
 
-tiger = Animal('tiger', 'predator')
-cobra = Animal('cobra', 'poisonous')
-giraffe = Animal('giraffe', 'herbivore')
-
-MyHuman = Human()
-
-# print('Is {} animal dangerous for human? : {}'.format(MyAnimal.animal_type, MyHuman.is_dangerous(MyAnimal)))
-# print('Is {} animal dangerous for human? : {}'.format(MyAnimal1.animal_type, MyHuman.is_dangerous(MyAnimal1)))
-# print('Is {} animal dangerous for human? : {}'.format(MyAnimal2.animal_type, MyHuman.is_dangerous(MyAnimal2)))
-
-print(f'Is {tiger} {tiger.animal_type} animal dangerous for human? : ')
+# tiger = Animal('tiger', 'хищник- опасный')
+# cobra = Animal('cobra', 'ядовитая - опасная')
+# giraffe = Animal('giraffe', 'травоядное животное - неопасное')
+#
+# human = Human('Human')
+#
+# print(f'Это {tiger.animal_type} для человека')
+# print(f'Это {cobra.animal_type} для человека')
+# print(f'Это {giraffe.animal_type} для человека')
