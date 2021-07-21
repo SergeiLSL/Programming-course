@@ -11,7 +11,7 @@
 
 class Animal:
 
-    def __init__(self, name, view, animal_type):
+    def __init__(self, name, view, animal_type='опасное'):
         self.name = name
         self.view = view
         self.animal_type = animal_type
@@ -27,11 +27,11 @@ class Human():
             return f'{animal.name} - {animal.view}, неопасное'
 
 
-tiger = Animal('тигр', 'хищник', 'опасное')
+tiger = Animal('тигр', 'хищник')
 cobra = Animal('кобра', 'змея', 'ядовитое')
 giraffe = Animal('жираф', 'травоядное животное', 'неопасное')
 scorpio = Animal('скорпион', 'паук', 'ядовитое')
-hippopotamus = Animal('бегемот', 'травоядное животное', 'опасное')
+hippopotamus = Animal('бегемот', 'травоядное животное')
 #
 human = Human()
 #
