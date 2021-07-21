@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # This is a simplest class
 
 class Car:
