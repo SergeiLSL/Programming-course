@@ -27,8 +27,8 @@ class Person:
         is_known_person = person in self.known_persons
         print(f'{self.name} {text_action[is_known_person]} {person.name}')
 
-    def populat(self, persons):
-        print(f'Список знакомых {self.name}: {self.known_persons}')
+    def __str__(self):
+        return f'Список знакомых {self.name} {self.known_persons}'
 
 
 if __name__ == '__main__':
@@ -43,7 +43,8 @@ if __name__ == '__main__':
     ivan.know(anna)  # Ivan уже знает человека по имени Anna
     misha.is_known(anna)  # Misha не знает человека по имени Anna
     misha.is_known(ivan)  # Misha не знает человека по имени Ivan
-    ivan.populat(ivan)
-    anna.populat(anna)
+    print(ivan)
+    print(anna)
+
 
     # print(misha)
