@@ -95,10 +95,10 @@ class Window:
 w = Window()
 w1 = Window()
 
-print('Initial state', w.is_opened, w1.is_opened)
+print('Initial state', w.is_opened, w1.is_opened)  # Window is now True
 
 w.open()
-print('New state', w.is_opened, w1.is_opened)
+print('New state', w.is_opened, w1.is_opened)  # Window is now Falsee
 
 w.close()
-print('New state', w.is_opened, w1.is_opened)
+print('New state', w.is_opened, w1.is_opened)  # New state False False
