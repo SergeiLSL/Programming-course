@@ -146,6 +146,7 @@ class D(A, B, C):
 
 
 def gen_person(age, name):
+    pass
 
 
 
