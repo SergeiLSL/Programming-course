@@ -3,6 +3,9 @@
 
 # All classes have the smae base class: object
 
+
+
+
 class Test:
     pass
 
@@ -23,8 +26,8 @@ class Person(object):
     def walk(self):
         print('Walking...')
 
-    def say_hello(self):
-        print('I am a person', self.name, self.age)
+    # def say_hello(self):
+    #     print('I am a person', self.name, self.age)
 
 
 class Student(Person):
@@ -33,9 +36,9 @@ class Student(Person):
 
 
 s = Student('Petr', 23)
-print(s.biological_name)
-s.walk()
-s.say_hello()
+print(s.biological_name)  # homo sapiens
+s.walk()  # Walking...
+s.say_hello()  # I am a student Petr 23
 
 
 
