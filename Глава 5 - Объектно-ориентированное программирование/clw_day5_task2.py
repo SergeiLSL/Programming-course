@@ -17,7 +17,9 @@ class Shape(object):
         sides_qty = len(sides)
 
         if (sides_qty < 1) and (sides_qty > 4):
-            raise ValueError('Ошибка при инициализации фигуры! Кол-во сторон {}, а должно быть в диапазоне от 1 до 4.'.format(sides_qty))
+            raise ValueError('Ошибка при инициализации фигуры! '
+                             'Кол-во сторон {}, а должно быть в диапазоне '
+                             'от 1 до 4.'.format(sides_qty))
         else:
             if sides_qty == 1:
                 self.sides = [n for n in sides] * 4
@@ -58,10 +60,10 @@ class Triangle(Shape):
         sides_qty = len(sides)
 
         if sides_qty != 3:
-            raise ValueError('Ошибка при инициализации треугольника! Кол-во сторон {}, а должно быть 3.'.format(sides_qty))
+            raise ValueError('Ошибка при инициализации треугольника! '
+                             'Кол-во сторон {}, а должно быть 3.'.format(sides_qty))
         else:
             self.sides = [n for n in sides]
-
 
         self.sides.sort()
 
@@ -69,14 +71,18 @@ class Triangle(Shape):
         two_sides_sum = self.sides[0] + self.sides[1]
 
         if two_sides_sum <= larger_side:
-            raise ValueError('Ошибка при инициализации треугольника! Со сторонами такой длины сторон построить треугольник невозможно!')
+            raise ValueError('Ошибка при инициализации треугольника! '
+                             'Со сторонами такой длины сторон построить '
+                             'треугольник невозможно!')
 
     def _calc_sqr(self):
         half_per = self._calc_per() / 2
-        return math.sqrt(half_per * (half_per - self.sides[0]) * (half_per - self.sides[1]) * (half_per - self.sides[2]))
+        return math.sqrt(half_per * (half_per - self.sides[0])
+                         * (half_per - self.sides[1]) * (half_per - self.sides[2]))
 
     def print_sqr(self):
         print('Площадь треугольника = {}'.format(self._calc_sqr()))
+
 
 class Polygon(Shape):
 
@@ -85,10 +91,10 @@ class Polygon(Shape):
         sides_qty = len(sides)
 
         if sides_qty != 4:
-            raise ValueError('Ошибка при инициализации четырехугольника! Кол-во сторон {}, а должно быть 4.'.format(sides_qty))
+            raise ValueError('Ошибка при инициализации четырехугольника! '
+                             'Кол-во сторон {}, а должно быть 4.'.format(sides_qty))
         else:
             self.sides = [n for n in sides]
-
 
         self.sides.sort()
 
@@ -96,16 +102,19 @@ class Polygon(Shape):
         three_sides_sum = self.sides[0] + self.sides[1] + self.sides[2]
 
         if three_sides_sum <= larger_side:
-            raise ValueError('Ошибка при инициализации четырехугольника! Со сторонами такой длины сторон построить четырехугольник невозможно!')
+            raise ValueError('Ошибка при инициализации четырехугольника! '
+                             'Со сторонами такой длины сторон построить '
+                             'четырехугольник невозможно!')
 
     def _calc_sqr(self):
-        return 'Рассчитать площадь произвольного четырехугольника без знания 2 углов невозможно'
+        return 'Рассчитать площадь произвольного четырехугольника ' \
+               'без знания 2 углов невозможно'
 
     def print_sqr(self):
         print(self._calc_sqr())
 
 
-rect = Rectange(1,2)
+rect = Rectange(1, 2)
 rect.print_sides('Стороны прямоугольника')  # Стороны прямоугольника : [1, 2, 1, 2]
 rect.print_per('прямоугольника')  # Периметр прямоугольник = 6
 rect.print_sqr()  # Площадь прямоугольника = 2
