@@ -27,5 +27,6 @@ class ExtendedCalc(Calc):
         #  previous = self.value * 8 + 9
         return -1 * self.k * previous
 
+
 e = ExtendedCalc(8, k=1.2)
 print(e.count())
